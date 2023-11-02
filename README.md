@@ -63,7 +63,7 @@ None
 ---
 - hosts: all
   roles:
-    - fail2ban
+    - oefenweb.fail2ban
 ```
 
 ### Enable sshd filter (with non-default settings)
@@ -72,7 +72,7 @@ None
 ---
 - hosts: all
   roles:
-    - fail2ban
+    - oefenweb.fail2ban
   vars:
     fail2ban_services:
       # In older versions of Fail2Ban this is called ssh
@@ -88,7 +88,7 @@ None
 ---
 - hosts: all
   roles:
-    - fail2ban
+    - oefenweb.fail2ban
   vars:
     fail2ban_filterd_path: ../../../files/fail2ban/etc/fail2ban/filter.d/
     fail2ban_services:
