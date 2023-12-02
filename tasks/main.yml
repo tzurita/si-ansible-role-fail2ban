@@ -11,6 +11,18 @@
     - fail2ban
     - fail2ban-install
 
+- name: Install python3-systemd for systemd backend
+  ansible.builtin.apt:
+    name: python3-systemd
+    state: "{{ apt_install_state | default('latest') }}"
+    update_cache: true
+    cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
+  when: fail2ban_backend == 'systemd'
+  tags:
+    - configuration
+    - fail2ban
+    - fail2ban-install
+
 - name: get fail2ban version
   ansible.builtin.command: >
     fail2ban-server -V

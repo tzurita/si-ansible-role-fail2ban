@@ -23,7 +23,7 @@ None
 - `fail2ban_bantime`: [default: `600`]: Sets the bantime
 - `fail2ban_maxretry`: [default: `3`]: Maximum number of retries before the host is put into jail
 - `fail2ban_findtime`: [default: `600`]: A host is banned if it has generated `fail2ban_maxretry` during the last `fail2ban_findtime`
-- `fail2ban_backend`: [default: `auto`]: Specifies the backend used to get files modification
+- `fail2ban_backend`: [default: `auto`]: Specifies the backend used to get files modification. For Debian 12, `systemd` is required.
 - `fail2ban_banaction`: [default: `iptables-multiport`]: Sets the global/default banaction
 - `fail2ban_banaction_allports`: [default: `iptables-allports`]: Sets the global/default banaction for allports
 - `fail2ban_mta`: [default: `sendmail`]: Email action
