@@ -4,10 +4,14 @@ galaxy_info:
   author: oefenweb
   role_name: fail2ban
   company: Oefenweb.nl B.V.
-  description: Set up fail2ban in Debian-like systems
+  description: Set up fail2ban in Debian-like and RHEL Systems
   license: MIT
   min_ansible_version: 2.10.0
   platforms:
+    - name: EL
+      versions:
+        - "8"
+        - "9"
     - name: Ubuntu
       versions:
         - bionic

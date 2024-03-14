@@ -1,15 +1,11 @@
 # tasks file
 ---
 - name: install
-  ansible.builtin.apt:
+  ansible.builtin.pkg:
     name: "{{ ' '.join(fail2ban_dependencies).split() }}"
-    state: "{{ apt_install_state | default('latest') }}"
-    update_cache: true
-    cache_valid_time: "{{ apt_update_cache_valid_time | default(3600) }}"
+    state: "present"
   tags:
-    - configuration
     - fail2ban
-    - fail2ban-install
 
 - name: get fail2ban version
   ansible.builtin.command: >
